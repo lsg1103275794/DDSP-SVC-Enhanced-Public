@@ -34,7 +34,7 @@
 
 ### 基于 yxlllc 的原始 DDSP-SVC
 
-所有核心语音转换能力均来自原始 [DDSP-SVC](https://github.com/yxlllc/DDSP-SVC) 项目：
+所有核心语音转换能力均来自原始 [DDSP-SVC](https://github.com/yxlllc/DDSP-SVC) 项目:
 
 - ✅ 可微分数字信号处理 (DDSP)
 - ✅ 整流流 (Rectified Flow) 架构
@@ -149,8 +149,8 @@ from ddsp.vocoder import F0_Extractor, Volume_Extractor, Units_Encoder
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/DDSP-SVC-6.3.git
-cd DDSP-SVC-6.3
+git clone https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public.git
+cd DDSP-SVC-Enhanced-Public
 
 # 自动化安装（推荐）
 # Linux/macOS:
@@ -465,8 +465,8 @@ isort .
 
 ## 📧 社区与支持
 
-- **问题**: [GitHub Issues](https://github.com/yourusername/DDSP-SVC-6.3/issues) - Bug 报告和功能请求
-- **讨论**: [GitHub Discussions](https://github.com/yourusername/DDSP-SVC-6.3/discussions) - 问答和社区交流
+- **问题**: [GitHub Issues](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/issues) - Bug 报告和功能请求
+- **讨论**: [GitHub Discussions](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/discussions) - 问答和社区交流
 - **拉取请求**: [贡献指南](CONTRIBUTING.md) - 如何贡献代码
 
 ---
@@ -492,6 +492,6 @@ isort .
 
 *站在巨人的肩膀上*
 
-[yxlllc](https://github.com/yxlllc) • [X-LANCE](https://github.com/X-LANCE) • [OpenVPI](https://github.com/openvpi) • [ZFTurbo](https://github.com/ZFTurbo) • [Sucial](https://huggingface.co/Sucial) • [UVR Team](https://github.com/Anjok07/ultimatevocalremovergui) • [HuanLinOTO](https://github.com/HuanLinOTO) • [更多贡献者...](https://github.com/yourusername/DDSP-SVC-6.3/graphs/contributors)
+[yxlllc](https://github.com/yxlllc) • [X-LANCE](https://github.com/X-LANCE) • [OpenVPI](https://github.com/openvpi) • [ZFTurbo](https://github.com/ZFTurbo) • [Sucial](https://huggingface.co/Sucial) • [UVR Team](https://github.com/Anjok07/ultimatevocalremovergui) • [HuanLinOTO](https://github.com/HuanLinOTO) • [更多贡献者...](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/graphs/contributors)
 
 </div>
