@@ -1,6 +1,6 @@
 {
   "name": "ddsp-svc-enhanced",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An enhanced singing voice conversion system powered by DDSP and AudioNoise technologies",
   "main": "api/main.py",
   "scripts": {

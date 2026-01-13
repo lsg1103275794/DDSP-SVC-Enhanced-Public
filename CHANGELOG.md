@@ -5,7 +5,14 @@ All notable changes to DDSP-SVC-Enhanced will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [6.3-Enhanced] - 2026-01-13
+## [1.0.1] - 2026-01-13
+
+### Added
+- 初始化 GitHub 仓库 `DDSP-SVC-Enhanced-Public`
+- 添加项目根目录 `package.json` 以支持版本管理和脚本运行
+- 配置项目上传规范，完成初次代码推送
+
+## [1.0.0] - 2026-01-13
 
 ### Added
 
