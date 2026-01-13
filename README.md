@@ -150,8 +150,8 @@ from ddsp.vocoder import F0_Extractor, Volume_Extractor, Units_Encoder
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/DDSP-SVC-6.3.git
-cd DDSP-SVC-6.3
+git clone https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public.git
+cd DDSP-SVC-Enhanced-Public
 
 # Automated setup (recommended)
 # Linux/macOS:
@@ -466,8 +466,8 @@ This project inherits all restrictions and disclaimers from upstream projects, p
 
 ## 📧 Community & Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/DDSP-SVC-6.3/issues) - Bug reports and feature requests
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/DDSP-SVC-6.3/discussions) - Q&A and community chat
+- **Issues**: [GitHub Issues](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/issues) - Bug reports and feature requests
+- **Discussions**: [GitHub Discussions](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/discussions) - Q&A and community chat
 - **Pull Requests**: [Contributing Guide](CONTRIBUTING.md) - How to contribute code
 
 ---
@@ -493,6 +493,6 @@ Every star helps these open-source projects grow!
 
 *Standing on the shoulders of giants*
 
-[yxlllc](https://github.com/yxlllc) • [X-LANCE](https://github.com/X-LANCE) • [OpenVPI](https://github.com/openvpi) • [ZFTurbo](https://github.com/ZFTurbo) • [Sucial](https://huggingface.co/Sucial) • [UVR Team](https://github.com/Anjok07/ultimatevocalremovergui) • [HuanLinOTO](https://github.com/HuanLinOTO) • [and many more...](https://github.com/yourusername/DDSP-SVC-6.3/graphs/contributors)
+[yxlllc](https://github.com/yxlllc) • [X-LANCE](https://github.com/X-LANCE) • [OpenVPI](https://github.com/openvpi) • [ZFTurbo](https://github.com/ZFTurbo) • [Sucial](https://huggingface.co/Sucial) • [UVR Team](https://github.com/Anjok07/ultimatevocalremovergui) • [HuanLinOTO](https://github.com/HuanLinOTO) • [and many more...](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/graphs/contributors)
 
 </div>
