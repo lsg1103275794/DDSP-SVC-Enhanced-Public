@@ -172,11 +172,24 @@ data/
 - [ ] **v1.3**: 为 Windows 用户提供一键安装包
 - [ ] **v2.0**: 支持基于扩散 (Diffusion) 的增强层
 
+## 🙏 致谢与参考
+
+本项目站在巨人的肩膀上，感谢以下开源项目的贡献：
+
+- **[DDSP-SVC](https://github.com/yxlllc/DDSP-SVC)** - yxlllc 开发的原始 DDSP 歌声转换框架（本项目核心）。
+- **[AudioNoise](https://github.com/torvalds/AudioNoise)** - 提供了 F0 平滑、LFO 调制及音频效果链的核心算法。
+- **[pc-ddsp](https://github.com/yxlllc/pc-ddsp)** - 基于相位的 DDSP 实现参考。
+- **[ddsp](https://github.com/magenta/ddsp)** - Google Magenta 的可微分 DSP 库。
+- **[ContentVec](https://github.com/amefs/contentvec)** - 强大的内容编码器支持。
+- **[RMVPE](https://github.com/Dream-High/RMVPE)** - 高精度的音高提取技术。
+
 ---
 
 <div align="center">
 
 **[GitHub 仓库](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public)** • **[项目文档](docs/)** • **[报告问题](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/issues)**
+
+</div>
 
 为您而作 ❤️ DDSP-SVC 开发者社区
 

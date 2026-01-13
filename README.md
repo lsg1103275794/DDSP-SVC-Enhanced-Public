@@ -172,11 +172,24 @@ The enhancement pipeline follows a high-performance DSP architecture:
 - [ ] **v1.3**: One-click installer for Windows users
 - [ ] **v2.0**: Support for Diffusion-based enhancement layers
 
+## 🙏 Acknowledgements & References
+
+This project is built upon the excellent work of the open-source community:
+
+- **[DDSP-SVC](https://github.com/yxlllc/DDSP-SVC)** - The original DDSP Singing Voice Conversion framework by yxlllc (Core of this project).
+- **[AudioNoise](https://github.com/torvalds/AudioNoise)** - Core algorithms for F0 smoothing, LFO modulation, and audio FX chains.
+- **[pc-ddsp](https://github.com/yxlllc/pc-ddsp)** - Phase-based DDSP implementation reference.
+- **[ddsp](https://github.com/magenta/ddsp)** - Google Magenta's differentiable DSP library.
+- **[ContentVec](https://github.com/amefs/contentvec)** - Powerful content encoder support.
+- **[RMVPE](https://github.com/Dream-High/RMVPE)** - High-precision pitch extraction technology.
+
 ---
 
 <div align="center">
 
-**[GitHub Repository](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public)** • **[Documentation](docs/)** • **[Report Bug](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/issues)**
+**[GitHub Repository](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public)** • **[Documentation](docs/)** • **[Report Issues](https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public/issues)**
+
+</div>
 
 Made with ❤️ for the Singing Voice Conversion Community
 
