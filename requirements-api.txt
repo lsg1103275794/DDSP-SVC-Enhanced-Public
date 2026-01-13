@@ -1,0 +1,19 @@
+# ===================================
+# DDSP-SVC-Enhanced API Requirements
+# ===================================
+# FastAPI backend dependencies
+
+# Web Framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+
+# CORS & Middleware
+starlette>=0.27.0
+
+# Data Validation
+pydantic>=2.5.0
+
+# HTTP Client (for external APIs)
+httpx>=0.25.0
+aiofiles>=23.2.0

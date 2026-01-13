@@ -1,0 +1,167 @@
+# ===================================
+# DDSP-SVC-Enhanced .gitignore
+# ===================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+SVCFusiondev/
+# Project Specific - Claude
+CLAUDE.md
+.claude/
+
+# ===================================
+# Large Files - Models & Weights
+# ===================================
+
+# Pretrained Models
+pretrain/
+!pretrain/.gitkeep
+
+# Training Experiments & Checkpoints
+exp/
+!exp/.gitkeep
+
+# Other Model Weights
+other_weights/
+!other_weights/.gitkeep
+
+# Model Files (anywhere in project)
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+*.pb
+
+# ===================================
+# Large Files - Data & Audio
+# ===================================
+
+# Dataset Directories
+data/
+!data/.gitkeep
+
+# Storage Directories (uploads, processed, outputs)
+storage/
+!storage/.gitkeep
+
+# Audio Files (anywhere in project)
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.aac
+
+# Video Files
+*.mp4
+*.avi
+*.mkv
+
+# ===================================
+# Temporary & Cache Files
+# ===================================
+
+# Project Cache
+cache/
+results/
+tmp/
+temp/
+
+# Logs
+logs/
+*.log
+
+# TensorBoard
+runs/
+events.out.tfevents.*
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# pytest
+.pytest_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+
+# ===================================
+# Frontend (Vue.js / Node.js)
+# ===================================
+
+# Dependencies
+node_modules/
+web/node_modules/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ===================================
+# Compressed Files
+# ===================================
+
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ===================================
+# OS Specific
+# ===================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ===================================
+# Git LFS (if needed for large files)
+# ===================================
+
+# Uncomment if using Git LFS
+# *.pt filter=lfs diff=lfs merge=lfs -text
+# *.ckpt filter=lfs diff=lfs merge=lfs -text

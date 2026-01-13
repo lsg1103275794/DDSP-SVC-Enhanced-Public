@@ -1,0 +1,19 @@
+{
+  "name": "ddsp-svc-enhanced",
+  "version": "1.0.0",
+  "description": "An enhanced singing voice conversion system powered by DDSP and AudioNoise technologies",
+  "main": "api/main.py",
+  "scripts": {
+    "start": "python -m api.main",
+    "web:dev": "cd web && npm run dev",
+    "web:build": "cd web && npm run build"
+  },
+  "keywords": [
+    "svc",
+    "ddsp",
+    "voice-conversion",
+    "audio-processing"
+  ],
+  "author": "",
+  "license": "MIT"
+}
