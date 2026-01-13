@@ -1,5 +1,7 @@
 # DDSP-SVC-Enhanced - 具备专业音频增强功能的下一代歌声转换系统
 
+[**English**](./README.md) | **中文**
+
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4+-orange.svg)](https://pytorch.org/)
@@ -9,7 +11,7 @@
 >
 > 🎨 **全新功能**：**LFO 动态表现力系统** & **内置录音室 FX 效果链** - 让 AI 合成声线拥有自然的情感起伏。
 >
-> 直接在推理流程中启用 **-f0smooth**、**-octavefix** 和 **-vibrato**，系统化提升歌声转换质量。
+> 💡 **致谢与致敬**：本项目的核心 DDSP-SVC 功能完全来自 [yxlllc](https://github.com/yxlllc/DDSP-SVC) 的原始项目。本增强版在此基础上添加了音频增强算法、Web 界面及多项性能优化，旨在提供更专业的歌声合成体验。
 
 ---
 
@@ -18,11 +20,11 @@
 - [✨ 核心特性](#-核心特性)
 - [📦 安装指南](#-安装指南)
 - [🔧 快速开始](#-快速开始)
+- [📂 数据准备](#-数据准备)
 - [🌐 Web 界面](#-web-界面)
 - [🔬 技术架构](#-技术架构)
 - [🗺️ 路线图](#-路线图)
 - [🤝 参与贡献](#-参与贡献)
-- [🙏 特别鸣谢](#-特别鸣谢)
 
 ---
 
@@ -69,7 +71,7 @@
 git clone https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public.git
 cd DDSP-SVC-Enhanced
 
-# 创建虚拟环境
+# 创建虚拟环境（强烈推荐，以隔离依赖环境）
 python -m venv venv
 # 激活环境 (Windows)
 venv\Scripts\activate
@@ -90,15 +92,51 @@ pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https
 
 ### 第一步：下载预训练模型
 请将以下文件放入 `pretrain/` 目录：
-- **ContentVec**: `pretrain/contentvec/checkpoint_best_legacy_500.pt`
-- **Vocoder**: `pretrain/nsf_hifigan/` (从 [OpenVPI](https://github.com/openvpi/vocoders/releases) 下载并解压)
-- **音高提取器**: `pretrain/rmvpe/model.pt`
+- **ContentVec (推荐)**: `pretrain/contentvec/checkpoint_best_legacy_500.pt`
+- **声码器 (Vocoder)**: `pretrain/nsf_hifigan/` (从 [OpenVPI](https://github.com/openvpi/vocoders/releases) 下载并解压)
+- **音高提取器 (Pitch Extractor)**: `pretrain/rmvpe/model.pt`
 
 ### 第二步：单条指令推理
 ```bash
+# 使用全套增强功能：平滑音高 + 八度修正 + 颤音 + 混响
 python main_reflow.py -i input.wav -m model.pt -o output.wav \
   -f0smooth -octavefix -vibrato -fx natural -reverb -revmix 0.25
 ```
+
+---
+
+## 📂 数据准备
+
+### 目录结构规范
+
+#### 单说话人 (Single Speaker)
+```text
+data/
+├── train/audio/    # 约 1000+ 个 2秒以上的 .wav 文件
+│   ├── song1.wav
+│   └── ...
+└── val/audio/      # 约 10 个验证文件
+    └── test1.wav
+```
+
+#### 多说话人 (Multi Speaker)
+```text
+data/
+├── train/audio/
+│   ├── spk1/       # 说话人 1
+│   │   ├── a.wav
+│   │   └── ...
+│   └── spk2/       # 说话人 2
+│       └── b.wav
+└── val/audio/
+    ├── spk1/
+    └── spk2/
+```
+
+### 💡 训练与预处理小贴士
+- **预处理**: 使用 `python preprocess.py -c configs/reflow.yaml`。多说话人模型请在配置文件中设置 `n_spk` 数量。
+- **训练**: 运行 `python train_reflow.py -c configs/reflow.yaml`。程序会自动恢复中断的进度。
+- **监控**: 使用 `tensorboard --logdir=exp` 实时查看训练曲线。
 
 ---
 
@@ -133,24 +171,6 @@ python main_reflow.py -i input.wav -m model.pt -o output.wav \
 - [ ] **v1.2**: 集成更先进的音高提取器 (如 FCPE)
 - [ ] **v1.3**: 为 Windows 用户提供一键安装包
 - [ ] **v2.0**: 支持基于扩散 (Diffusion) 的增强层
-
----
-
-## 🤝 参与贡献
-贡献是开源社区如此美妙的原因。您的任何贡献我们都**非常感谢**。
-
-1. Fork 本项目
-2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的改动 (`git commit -m 'feat: add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启一个 Pull Request
-
----
-
-## 🙏 特别鸣谢
-- [yxlllc](https://github.com/yxlllc/DDSP-SVC) 提供了强大的 DDSP-SVC 基础。
-- [AudioNoise](https://github.com/torvalds/AudioNoise) 提供了专业的 DSP 实现思路。
-- **OpenVPI** 社区提供的高质量声码器。
 
 ---
 

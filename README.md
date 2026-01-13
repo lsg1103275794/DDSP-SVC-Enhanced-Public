@@ -1,5 +1,7 @@
 # DDSP-SVC-Enhanced - Next-Generation Singing Voice Conversion with Professional Audio Enhancement
 
+**English** | [**中文**](./README_cn.md)
+
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.8+-green.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.4+-orange.svg)](https://pytorch.org/)
@@ -9,7 +11,7 @@
 >
 > 🎨 **New Features**: **LFO Dynamic Expression System** & **Built-in Studio FX Chain** - bringing natural emotional fluctuations to AI-synthesized vocals.
 >
-> Enable **-f0smooth**, **-octavefix**, and **-vibrato** directly in the inference pipeline to systematically elevate conversion quality.
+> 💡 **Acknowledgements & Credits**: The core DDSP-SVC functionality of this project is entirely from the original project by [yxlllc](https://github.com/yxlllc/DDSP-SVC). This enhanced version adds audio enhancement algorithms, a modern Web UI, and various performance optimizations to provide a more professional singing voice synthesis experience.
 
 ---
 
@@ -18,11 +20,11 @@
 - [✨ Key Features](#-key-features)
 - [📦 Installation](#-installation)
 - [🔧 Quick Start](#-quick-start)
+- [📂 Data Preparation](#-data-preparation)
 - [🌐 Web GUI](#-web-gui)
 - [🔬 Technical Architecture](#-technical-architecture)
 - [🗺️ Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
-- [🙏 Acknowledgements](#-acknowledgements)
 
 ---
 
@@ -69,7 +71,7 @@ This fork is designed for users who demand **studio-quality results** and a **mo
 git clone https://github.com/lsg1103275794/DDSP-SVC-Enhanced-Public.git
 cd DDSP-SVC-Enhanced
 
-# Create virtual environment
+# Create virtual environment (Highly Recommended)
 python -m venv venv
 # Activate (Windows)
 venv\Scripts\activate
@@ -90,15 +92,51 @@ pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https
 
 ### Step 1: Download Pretrained Models
 Place the following files in the `pretrain/` directory:
-- **ContentVec**: `pretrain/contentvec/checkpoint_best_legacy_500.pt`
+- **ContentVec (Recommended)**: `pretrain/contentvec/checkpoint_best_legacy_500.pt`
 - **Vocoder**: `pretrain/nsf_hifigan/` (Extract from [OpenVPI](https://github.com/openvpi/vocoders/releases))
 - **Pitch Extractor**: `pretrain/rmvpe/model.pt`
 
 ### Step 2: One-Command Inference
 ```bash
+# Use full enhancement suite: Pitch Smoothing + Octave Fix + Vibrato + Reverb
 python main_reflow.py -i input.wav -m model.pt -o output.wav \
   -f0smooth -octavefix -vibrato -fx natural -reverb -revmix 0.25
 ```
+
+---
+
+## 📂 Data Preparation
+
+### Directory Structure
+
+#### Single Speaker
+```text
+data/
+├── train/audio/    # ~1000+ .wav files (2s+ each)
+│   ├── song1.wav
+│   └── ...
+└── val/audio/      # ~10 validation files
+    └── test1.wav
+```
+
+#### Multi Speaker
+```text
+data/
+├── train/audio/
+│   ├── spk1/       # Speaker 1
+│   │   ├── a.wav
+│   │   └── ...
+│   └── spk2/       # Speaker 2
+│       └── b.wav
+└── val/audio/
+    ├── spk1/
+    └── spk2/
+```
+
+### 💡 Training & Preprocessing Tips
+- **Preprocessing**: Run `python preprocess.py -c configs/reflow.yaml`. For multi-speaker, set `n_spk` in the config file.
+- **Training**: Run `python train_reflow.py -c configs/reflow.yaml`. Training resumes automatically if interrupted.
+- **Monitoring**: Use `tensorboard --logdir=exp` to view training curves in real-time.
 
 ---
 
@@ -133,24 +171,6 @@ The enhancement pipeline follows a high-performance DSP architecture:
 - [ ] **v1.2**: Integration of more advanced pitch extractors (e.g., FCPE)
 - [ ] **v1.3**: One-click installer for Windows users
 - [ ] **v2.0**: Support for Diffusion-based enhancement layers
-
----
-
-## 🤝 Contributing
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'feat: add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 🙏 Acknowledgements
-- [yxlllc](https://github.com/yxlllc/DDSP-SVC) for the incredible DDSP-SVC foundation.
-- [AudioNoise](https://github.com/torvalds/AudioNoise) for the professional DSP implementation.
-- **OpenVPI** for high-quality vocoders.
 
 ---
 
